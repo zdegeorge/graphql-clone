@@ -1,0 +1,21 @@
+type Entry {
+  id: ID!
+  user_id: ID!
+  name: String!
+  user: User!
+  content: String
+  created_at: String
+}
+
+type Query {
+  entries: [Entry]
+  entry(id: ID!): Entry
+}
+
+type Mutation {
+  createEntry(name: String!, userId: Int!, content: String): Entry!
+}
+
+type Subscription {
+  newEntry: Entry!
+}

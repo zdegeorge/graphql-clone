@@ -1,0 +1,41 @@
+type User {
+  id: ID!
+  username: String!
+  created_at: String
+  image_url: String
+  password: String
+  admin: Boolean!
+}
+
+type Mutation {
+  createUser(name: String!, image_url: String): User!
+}
+
+enum SessionType {
+  VISITOR
+  ADMIN
+}
+
+type Session {
+  id: ID!
+  type: SessionType!
+  authenticated: Boolean!
+  admin: Boolean!
+  user: User
+}
+
+type Query {
+  sessions: [Session]
+  session(id: ID!): Session
+  users: [User]
+  user(id: ID!): User
+}
+
+input AuthenticateAdminInput {
+  username: String!
+  password: String!
+}
+
+input AuthenticateVisitorInput {
+  userid: String!
+}

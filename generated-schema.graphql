@@ -1,0 +1,267 @@
+
+
+
+# DDDDDDDDD......OOOOOOOO...
+# DDDDDDDDDD....OOOOOOOOOO..
+# DDDDDDDDDDD..OOOOOOOOOOOO.
+# DDD....DDDD..OOOO....OOOO.
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD....DDDD..OOOO....OOOO.
+# DDDDDDDDDDD..OOOOOOOOOOOO.
+# DDDDDDDDDD....OOOOOOOOOO..
+# DDDDDDDDD......OOOOOOOO...
+
+# NNNN....NNN....OOOOOOOO...OTTTTTTTTTT
+# NNNNN...NNN...OOOOOOOOOO..OTTTTTTTTTT
+# NNNNN...NNN..OOOOOOOOOOOO.OTTTTTTTTTT
+# NNNNNN..NNN..OOOO....OOOO.....TTT....
+# NNNNNN..NNN.NOOO......OOOO....TTT....
+# NNNNNNN.NNN.NOOO......OOOO....TTT....
+# NNN.NNN.NNN.NOOO......OOOO....TTT....
+# NNN.NNNNNNN.NOOO......OOOO....TTT....
+# NNN..NNNNNN.NOOO......OOOO....TTT....
+# NNN..NNNNNN..OOOO....OOOO.....TTT....
+# NNN...NNNNN..OOOOOOOOOOOO.....TTT....
+# NNN...NNNNN...OOOOOOOOOO......TTT....
+# NNN....NNNN....OOOOOOOO.......TTT....
+
+# EEEEEEEEEE..DDDDDDDDD....III.ITTTTTTTTT
+# EEEEEEEEEE..DDDDDDDDDD...III.ITTTTTTTTT
+# EEEEEEEEEE..DDDDDDDDDDD..III.ITTTTTTTTT
+# EEE.........DDD....DDDD..III.....TTT...
+# EEE.........DDD.....DDDD.III.....TTT...
+# EEEEEEEEEE..DDD.....DDDD.III.....TTT...
+# EEEEEEEEEE..DDD.....DDDD.III.....TTT...
+# EEEEEEEEEE..DDD.....DDDD.III.....TTT...
+# EEE.........DDD.....DDDD.III.....TTT...
+# EEE.........DDD....DDDD..III.....TTT...
+# EEEEEEEEEEE.DDDDDDDDDDD..III.....TTT...
+# EEEEEEEEEEE.DDDDDDDDDD...III.....TTT...
+# EEEEEEEEEEE.DDDDDDDDD....III.....TTT...
+
+# Instead, you should edit the ".graphql" files in the "src/schema/" folder
+
+# This file will just get overwritten as soon as the server reloads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+type Entry {
+  id: ID!
+  user_id: ID!
+  name: String!
+  user: User!
+  content: String
+  created_at: String
+}
+
+type Query {
+  entries: [Entry]
+  entry(id: ID!): Entry
+  sessions: [Session]
+  session(id: ID!): Session
+  users: [User]
+  user(id: ID!): User
+  subjects: [Subject]!
+  subject(id: ID!): Subject
+}
+
+type Mutation {
+  createEntry(name: String!, userId: Int!, content: String): Entry!
+  createUser(name: String!, image_url: String): User!
+  createSubject(name: String!, extension: String): Subject!
+}
+
+type Subscription {
+  newEntry: Entry!
+  newSubject: Subject!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+enum Permission {
+  INVALID_PERMISSION
+  VALID_PERMISSION
+}
+
+enum SessionType {
+  VISITOR
+  ADMIN
+  APP_USER
+  APP_LOUNGE
+}
+
+type User {
+  id: ID!
+  username: String!
+  created_at: String
+  image_url: String
+  password: String
+  admin: Boolean!
+}
+
+type Session {
+  id: ID!
+  type: SessionType!
+  authenticated: Boolean!
+  admin: Boolean!
+  user: User
+}
+
+input AuthenticateAdminInput {
+  username: String!
+  password: String!
+}
+
+input AuthenticateVisitorInput {
+  userid: String!
+}
+
+type Subject {
+  id: ID!
+  name: String!
+  extension: String
+  created_at: String
+}
+
+scalar Date
+
+scalar Time
+
+scalar DateTime
+
+scalar Timestamp
+
+scalar UtcOffset
+
+scalar Duration
+
+scalar ISO8601Duration
+
+scalar LocalDate
+
+scalar LocalTime
+
+scalar LocalEndTime
+
+scalar EmailAddress
+
+scalar NegativeFloat
+
+scalar NegativeInt
+
+scalar NonEmptyString
+
+scalar NonNegativeFloat
+
+scalar NonNegativeInt
+
+scalar NonPositiveFloat
+
+scalar NonPositiveInt
+
+scalar PhoneNumber
+
+scalar PositiveFloat
+
+scalar PositiveInt
+
+scalar PostalCode
+
+scalar UnsignedFloat
+
+scalar UnsignedInt
+
+scalar URL
+
+scalar BigInt
+
+scalar Long
+
+scalar Byte
+
+scalar UUID
+
+scalar GUID
+
+scalar Hexadecimal
+
+scalar HexColorCode
+
+scalar HSL
+
+scalar HSLA
+
+scalar IPv4
+
+scalar IPv6
+
+scalar ISBN
+
+scalar JWT
+
+scalar Latitude
+
+scalar Longitude
+
+scalar MAC
+
+scalar Port
+
+scalar RGB
+
+scalar RGBA
+
+scalar SafeInt
+
+scalar USCurrency
+
+scalar Currency
+
+scalar JSON
+
+scalar JSONObject
+
+scalar IBAN
+
+scalar ObjectID
+
+scalar Void
+
+scalar DID

@@ -1,0 +1,80 @@
+
+
+
+# DDDDDDDDD......OOOOOOOO...
+# DDDDDDDDDD....OOOOOOOOOO..
+# DDDDDDDDDDD..OOOOOOOOOOOO.
+# DDD....DDDD..OOOO....OOOO.
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD.....DDDDDOOO......OOOO
+# DDD....DDDD..OOOO....OOOO.
+# DDDDDDDDDDD..OOOOOOOOOOOO.
+# DDDDDDDDDD....OOOOOOOOOO..
+# DDDDDDDDD......OOOOOOOO...
+
+# NNNN....NNN....OOOOOOOO...OTTTTTTTTTT
+# NNNNN...NNN...OOOOOOOOOO..OTTTTTTTTTT
+# NNNNN...NNN..OOOOOOOOOOOO.OTTTTTTTTTT
+# NNNNNN..NNN..OOOO....OOOO.....TTT....
+# NNNNNN..NNN.NOOO......OOOO....TTT....
+# NNNNNNN.NNN.NOOO......OOOO....TTT....
+# NNN.NNN.NNN.NOOO......OOOO....TTT....
+# NNN.NNNNNNN.NOOO......OOOO....TTT....
+# NNN..NNNNNN.NOOO......OOOO....TTT....
+# NNN..NNNNNN..OOOO....OOOO.....TTT....
+# NNN...NNNNN..OOOOOOOOOOOO.....TTT....
+# NNN...NNNNN...OOOOOOOOOO......TTT....
+# NNN....NNNN....OOOOOOOO.......TTT....
+
+# EEEEEEEEEE..DDDDDDDDD....III.ITTTTTTTTT
+# EEEEEEEEEE..DDDDDDDDDD...III.ITTTTTTTTT
+# EEEEEEEEEE..DDDDDDDDDDD..III.ITTTTTTTTT
+# EEE.........DDD....DDDD..III.....TTT...
+# EEE.........DDD.....DDDD.III.....TTT...
+# EEEEEEEEEE..DDD.....DDDD.III.....TTT...
+# EEEEEEEEEE..DDD.....DDDD.III.....TTT...
+# EEEEEEEEEE..DDD.....DDDD.III.....TTT...
+# EEE.........DDD.....DDDD.III.....TTT...
+# EEE.........DDD....DDDD..III.....TTT...
+# EEEEEEEEEEE.DDDDDDDDDDD..III.....TTT...
+# EEEEEEEEEEE.DDDDDDDDDD...III.....TTT...
+# EEEEEEEEEEE.DDDDDDDDD....III.....TTT...
+
+# Instead, you should edit the ".graphql" files in the "src/schema/" folder
+
+# This file will just get overwritten as soon as the server reloads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

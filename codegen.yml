@@ -1,0 +1,42 @@
+schema: ./generated-schema.graphql
+
+config:
+  declarationKind: type
+  maybeValue: "T | undefined"
+  enumsAsTypes: true
+  noExport: true
+  optionalInfoArgument: true
+  # types for the customer scalars provided by the graphql-scalars package
+  scalars:
+    ID: string
+    Date: Date
+    JSONArray: "(string | number | boolean | null | Record<string, unknown>)[]"
+    TableRow: "(string | number | boolean | null)[]"
+generates:
+  ./@types/resolvers.d.ts:
+    plugins:
+      - add:
+          placement: prepend
+          content: "declare global { declare namespace Resolvers {"
+      - typescript
+      - typescript-resolvers
+      - add:
+          placement: append
+          content: "} } export {};"
+    config:
+      noSchemaStitching: true
+      # allow resolvers to return functions/promises for fields. Doing so is
+      # supported by apollo server but will cause type errors without this
+      wrapFieldDefinitions: true
+      fieldWrapperValue: "T | Promise<T> | (() => T) | (() => Promise<T>)"
+  ./@types/schema.d.ts:
+    plugins:
+      - add:
+          placement: prepend
+          content: "declare global { declare namespace Schema {"
+      - typescript
+      - add:
+          placement: append
+          content: "} } export {};"
+    config:
+      noSchemaStitching: false # currently this is the default for this option. adding this b/c the default is going to change to true in the next version and that could break this file. see documentation for the noSchemaStitching option here: https://www.graphql-code-generator.com/docs/plugins/typescript-resolvers

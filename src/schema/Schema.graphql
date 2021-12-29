@@ -1,0 +1,15 @@
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+enum Permission {
+  INVALID_PERMISSION
+  VALID_PERMISSION
+}
+
+enum SessionType {
+  APP_USER
+  APP_LOUNGE
+}

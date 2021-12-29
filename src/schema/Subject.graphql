@@ -1,0 +1,19 @@
+type Subject {
+  id: ID!
+  name: String!
+  extension: String
+  created_at: String
+}
+
+type Query {
+  subjects: [Subject]!
+  subject(id: ID!): Subject
+}
+
+type Mutation {
+  createSubject(name: String!, extension: String): Subject!
+}
+
+type Subscription {
+  newSubject: Subject!
+}
